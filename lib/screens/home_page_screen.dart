@@ -21,7 +21,9 @@ class HomePage extends StatelessWidget {
         child: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [CustomButton()],
+          children: const [
+            CustomButton(title: 'Zwykłe kości'),
+          ],
         )),
       ),
     );
