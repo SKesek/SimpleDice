@@ -1,2 +1,2 @@
-# dice_pro
+# DicePro
  Aplikacja z koścmi
