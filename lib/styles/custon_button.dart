@@ -10,13 +10,29 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-      onPressed: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const NormalDice()));
-      },
-      child: Text(title),
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.blueAccent,
+        ),
+        onPressed: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const NormalDice()));
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
