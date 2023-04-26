@@ -5,14 +5,16 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.title,
+    required this.icon,
   });
   final String title;
+  final Image icon;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
-      child: TextButton(
+      child: TextButton.icon(
         style: TextButton.styleFrom(
           backgroundColor: Colors.blueAccent,
         ),
@@ -20,18 +22,16 @@ class CustomButton extends StatelessWidget {
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const NormalDice()));
         },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(color: Colors.white, fontSize: 25),
-              ),
-            ],
-          ),
+        label: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ],
         ),
+        icon: icon,
       ),
     );
   }

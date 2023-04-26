@@ -24,11 +24,11 @@ class HomePage extends StatelessWidget {
                     children: [
                       Image.asset(
                         'images/logo.png',
-                        scale: 5,
+                        scale: 6,
                       ),
                       const Text(
-                        'Dice Pro',
-                        style: TextStyle(fontSize: 60, color: Colors.white),
+                        'Simple Dice',
+                        style: TextStyle(fontSize: 45, color: Colors.white),
                       ),
                     ],
                   ),
@@ -36,15 +36,27 @@ class HomePage extends StatelessWidget {
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    children: [
                       CustomButton(
                         title: 'Zwykłe kości',
+                        icon: Image.asset(
+                          'images/dice_logo.png',
+                          scale: 10,
+                        ),
                       ),
                       CustomButton(
                         title: 'Wielościenne kości',
+                        icon: Image.asset(
+                          'images/dice_roll_logo.png',
+                          scale: 14,
+                        ),
                       ),
                       CustomButton(
                         title: 'Kościany poker',
+                        icon: Image.asset(
+                          'images/dice_logo.png',
+                          scale: 10,
+                        ),
                       ),
                     ],
                   ),
