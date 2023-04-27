@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/home_page_screen.dart';
+import 'const.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,14 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: SafeArea(
+        child: Scaffold(
+          body: Container(
+            decoration: kBackgroundColor(),
+            child: const HomePage(),
+          ),
+        ),
+      ),
     );
   }
 }
