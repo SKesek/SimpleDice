@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:dice_pro/screens/normal_dice.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.title,
     required this.icon,
+    required this.screenName,
   });
   final String title;
   final Image icon;
+  final Navigator screenName;
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +20,14 @@ class CustomButton extends StatelessWidget {
           backgroundColor: Colors.blueAccent,
         ),
         onPressed: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const NormalDice()));
+          screenName;
         },
         label: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               title,
-              style: const TextStyle(color: Colors.white, fontSize: 25),
+              style: const TextStyle(color: Colors.white, fontSize: 20),
             ),
           ],
         ),

@@ -7,35 +7,64 @@ class NormalDice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: kBackgroundColor(),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomButton(
-                title: 'Zwykłe kości',
-                icon: Image.asset(
-                  'images/dice_logo.png',
-                  scale: 10,
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          decoration: kBackgroundColor(),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'images/dice_logo.png',
+                      scale: 5,
+                    ),
+                    const Text(
+                      'Zwykłe kości',
+                      style: TextStyle(fontSize: 45, color: Colors.white),
+                    ),
+                  ],
+                )),
+                Column(
+                  children: [
+                    CustomButton(
+                      title: '1 Kość',
+                      icon: Image.asset(
+                        'images/empty.png',
+                      ),
+                    ),
+                    CustomButton(
+                      title: '2 Kości',
+                      icon: Image.asset(
+                        'images/empty.png',
+                      ),
+                    ),
+                    CustomButton(
+                      title: '3 Kości',
+                      icon: Image.asset(
+                        'images/empty.png',
+                      ),
+                    ),
+                    CustomButton(
+                      title: '4 Kości',
+                      icon: Image.asset(
+                        'images/empty.png',
+                      ),
+                    ),
+                    CustomButton(
+                      title: '5 Kości',
+                      icon: Image.asset(
+                        'images/empty.png',
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              CustomButton(
-                title: 'Wielościenne kości',
-                icon: Image.asset(
-                  'images/dice_roll_logo.png',
-                  scale: 14,
-                ),
-              ),
-              CustomButton(
-                title: 'Kościany poker',
-                icon: Image.asset(
-                  'images/dice_logo.png',
-                  scale: 10,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
