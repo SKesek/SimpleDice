@@ -1,4 +1,4 @@
-# DicePro
+# SimpleDice
  Aplikacja z koścmi
  
  Aplikacja jest w trakcie tworzenia.
