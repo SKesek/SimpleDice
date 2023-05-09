@@ -35,31 +35,31 @@ class NormalDice extends StatelessWidget {
                       title: '1 Kość',
                       icon: Image.asset(
                         'images/empty.png',
-                      ),
+                      ), onPressed: null,
                     ),
                     CustomButton(
                       title: '2 Kości',
                       icon: Image.asset(
                         'images/empty.png',
-                      ),
+                      ), onPressed: null,
                     ),
                     CustomButton(
                       title: '3 Kości',
                       icon: Image.asset(
                         'images/empty.png',
-                      ),
+                      ), onPressed: null,
                     ),
                     CustomButton(
                       title: '4 Kości',
                       icon: Image.asset(
                         'images/empty.png',
-                      ),
+                      ), onPressed: null,
                     ),
                     CustomButton(
                       title: '5 Kości',
                       icon: Image.asset(
                         'images/empty.png',
-                      ),
+                      ), onPressed: null,
                     ),
                   ],
                 ),
