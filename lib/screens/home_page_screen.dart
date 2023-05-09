@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                   icon: Image.asset(
                     'images/dice_logo.png',
                     scale: 10,
-                  ), onPressed: null,
+                  ), onPressed: Navigator.push(context, MaterialPageRoute(builder: builder)),
                 ),
                 CustomButton(
                   title: 'Wielościenne kości',
