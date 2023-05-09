@@ -1,3 +1,4 @@
+import 'package:dice_pro/screens/manywall_dice.dart';
 import 'package:dice_pro/screens/normal_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
@@ -34,21 +35,24 @@ class HomePage extends StatelessWidget {
                   icon: Image.asset(
                     'images/dice_logo.png',
                     scale: 10,
-                  ), onPressed: Navigator.push(context, MaterialPageRoute(builder: builder)),
+                  ),
+                  screenName: const NormalDice(),
                 ),
                 CustomButton(
                   title: 'Wielościenne kości',
                   icon: Image.asset(
                     'images/dice_roll_logo.png',
                     scale: 14,
-                  ), onPressed: null,
+                  ),
+                  screenName: const ManywallDice(),
                 ),
                 CustomButton(
                   title: 'Kościany poker',
                   icon: Image.asset(
                     'images/dice_logo.png',
                     scale: 10,
-                  ), onPressed: ,
+                  ),
+                  screenName: const NormalDice(),
                 ),
               ],
             ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dice_pro/const.dart';
-import 'package:dice_pro/styles/custon_button.dart';
 
 class NormalDice extends StatelessWidget {
   const NormalDice({super.key});
@@ -30,39 +29,39 @@ class NormalDice extends StatelessWidget {
                   ],
                 )),
                 Column(
-                  children: [
-                    CustomButton(
-                      title: '1 Kość',
-                      icon: Image.asset(
-                        'images/empty.png',
-                      ), onPressed: null,
+                    // children: [
+                    //   CustomButton(
+                    //     title: '1 Kość',
+                    //     icon: Image.asset(
+                    //       'images/empty.png',
+                    //     ), screenName: null,
+                    //   ),
+                    //   CustomButton(
+                    //     title: '2 Kości',
+                    //     icon: Image.asset(
+                    //       'images/empty.png',
+                    //     ), screenName: null,
+                    //   ),
+                    //   CustomButton(
+                    //     title: '3 Kości',
+                    //     icon: Image.asset(
+                    //       'images/empty.png',
+                    //     ), screenName: null,
+                    //   ),
+                    //   CustomButton(
+                    //     title: '4 Kości',
+                    //     icon: Image.asset(
+                    //       'images/empty.png',
+                    //     ), screenName: null,
+                    //   ),
+                    //   CustomButton(
+                    //     title: '5 Kości',
+                    //     icon: Image.asset(
+                    //       'images/empty.png',
+                    //     ), screenName: null,
+                    //   ),
+                    // ],
                     ),
-                    CustomButton(
-                      title: '2 Kości',
-                      icon: Image.asset(
-                        'images/empty.png',
-                      ), onPressed: null,
-                    ),
-                    CustomButton(
-                      title: '3 Kości',
-                      icon: Image.asset(
-                        'images/empty.png',
-                      ), onPressed: null,
-                    ),
-                    CustomButton(
-                      title: '4 Kości',
-                      icon: Image.asset(
-                        'images/empty.png',
-                      ), onPressed: null,
-                    ),
-                    CustomButton(
-                      title: '5 Kości',
-                      icon: Image.asset(
-                        'images/empty.png',
-                      ), onPressed: null,
-                    ),
-                  ],
-                ),
               ],
             ),
           ),

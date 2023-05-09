@@ -5,11 +5,11 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
-    required this.onPressed,
+    required this.screenName,
   });
   final String title;
   final Image icon;
-  final Function onPressed;
+  final Widget screenName;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,6 @@ class CustomButton extends StatelessWidget {
         style: TextButton.styleFrom(
           backgroundColor: Colors.blueAccent,
         ),
-        onPressed: onPressed(),
         label: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,6 +29,10 @@ class CustomButton extends StatelessWidget {
           ],
         ),
         icon: icon,
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => screenName));
+        },
       ),
     );
   }
