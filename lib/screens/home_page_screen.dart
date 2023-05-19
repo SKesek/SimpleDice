@@ -1,4 +1,4 @@
-import 'package:dice_pro/screens/manywall_dice.dart';
+import 'package:dice_pro/screens/manywall_numer_screen.dart';
 import 'package:dice_pro/screens/normal_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                     'images/dice_roll_logo.png',
                     scale: 14,
                   ),
-                  screenName: const ManywallDice(),
+                  screenName: const ManywallNumerScreen(),
                 ),
                 CustomButton(
                   title: 'Kościany poker',
