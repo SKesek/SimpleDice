@@ -1,5 +1,5 @@
 import 'package:dice_pro/const.dart';
-import 'package:dice_pro/screens/normal_dice.dart';
+import 'package:dice_pro/screens/manywall_screen.dart';
 import 'package:flutter/material.dart';
 
 class ManywallNumerScreen extends StatefulWidget {
@@ -61,7 +61,8 @@ class _ManywallNumerScreenState extends State<ManywallNumerScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const NormalDice()));
+                                  builder: (context) =>
+                                      const ManywallScreen()));
                         },
                         child: const Text(
                           'Dalej',
