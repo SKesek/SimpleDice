@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-    required this.title,
     required this.icon,
+    required this.title,
     required this.screenName,
   });
   final String title;
@@ -17,8 +17,7 @@ class CustomButton extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: TextButton.icon(
         style: TextButton.styleFrom(
-          backgroundColor: Colors.blueAccent,
-        ),
+            backgroundColor: Colors.blueAccent, elevation: 8),
         label: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -28,11 +27,11 @@ class CustomButton extends StatelessWidget {
             ),
           ],
         ),
-        icon: icon,
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => screenName));
         },
+        icon: icon,
       ),
     );
   }

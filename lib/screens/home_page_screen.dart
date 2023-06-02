@@ -31,27 +31,27 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 CustomButton(
-                  title: 'Zwykłe kości',
                   icon: Image.asset(
                     'images/dice_logo.png',
                     scale: 10,
                   ),
+                  title: 'Zwykłe kości',
                   screenName: const NormalDice(),
                 ),
                 CustomButton(
-                  title: 'Wielościenne kości',
                   icon: Image.asset(
                     'images/dice_roll_logo.png',
                     scale: 14,
                   ),
+                  title: 'Wielościenne kości',
                   screenName: const ManywallNumerScreen(),
                 ),
                 CustomButton(
-                  title: 'Kościany poker',
                   icon: Image.asset(
                     'images/dice_logo.png',
                     scale: 10,
                   ),
+                  title: 'Kościany poker',
                   screenName: const NormalDice(),
                 ),
               ],

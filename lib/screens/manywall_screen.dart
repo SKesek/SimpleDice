@@ -1,14 +1,30 @@
 import 'package:dice_pro/const.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class ManywallScreen extends StatefulWidget {
-  const ManywallScreen({super.key});
+  const ManywallScreen({super.key, required this.numberWall});
+
+  final int numberWall;
 
   @override
-  State<ManywallScreen> createState() => _MyWidgetState();
+  State<ManywallScreen> createState() => _ManywallScreentState();
 }
 
-class _MyWidgetState extends State<ManywallScreen> {
+class _ManywallScreentState extends State<ManywallScreen> {
+  late int number;
+  @override
+  void initState() {
+    super.initState();
+    number = widget.numberWall;
+  }
+
+  void rollDice() {
+    setState(() {
+      number = Random().nextInt(widget.numberWall) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,13 +34,43 @@ class _MyWidgetState extends State<ManywallScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('images/empty_dice.png'),
-              ElevatedButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Roll',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
-                  ))
+              Expanded(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset('images/empty_dice.png'),
+                    Text(
+                      number.toString(),
+                      style:
+                          const TextStyle(color: Colors.black, fontSize: 100),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Expanded(
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              elevation: 8, backgroundColor: Colors.blueAccent),
+                          onPressed: () {
+                            rollDice();
+                          },
+                          child: const Text(
+                            'Roll',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          )),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),

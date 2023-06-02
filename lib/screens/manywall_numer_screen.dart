@@ -1,6 +1,7 @@
 import 'package:dice_pro/const.dart';
 import 'package:dice_pro/screens/manywall_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:dice_pro/styles/custon_button.dart';
 
 class ManywallNumerScreen extends StatefulWidget {
   const ManywallNumerScreen({super.key});
@@ -55,19 +56,20 @@ class _ManywallNumerScreenState extends State<ManywallNumerScreen> {
                         onPressed: decrementNumber,
                         child: const Icon(Icons.arrow_drop_down)),
                   ]),
+                  const SizedBox(
+                    height: 50,
+                  ),
                   Column(children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ManywallScreen()));
-                        },
-                        child: const Text(
-                          'Dalej',
-                          style: TextStyle(fontSize: 20, color: Colors.black),
-                        )),
+                    CustomButton(
+                      title: 'Dalej',
+                      screenName: ManywallScreen(
+                        numberWall: numberWall,
+                      ),
+                      icon: Image.asset(
+                        'images/empty.png',
+                        scale: 15,
+                      ),
+                    ),
                   ])
                 ],
               ),
