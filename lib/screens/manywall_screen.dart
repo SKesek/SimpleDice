@@ -32,43 +32,36 @@ class _ManywallScreentState extends State<ManywallScreen> {
         decoration: kBackgroundColor(),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Expanded(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset('images/empty_dice.png'),
-                    Text(
-                      number.toString(),
-                      style:
-                          const TextStyle(color: Colors.black, fontSize: 100),
-                    )
-                  ],
-                ),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Image.asset('images/empty_dice.png'),
+                  Text(
+                    number.toString(),
+                    style: const TextStyle(color: Colors.black, fontSize: 100),
+                  )
+                ],
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 15),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Expanded(
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              elevation: 8, backgroundColor: Colors.blueAccent),
-                          onPressed: () {
-                            rollDice();
-                          },
-                          child: const Text(
-                            'Roll',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                            ),
-                          )),
-                    ),
-                  ),
+                padding: const EdgeInsets.only(
+                    top: 75, bottom: 50, right: 10, left: 10),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          elevation: 8, backgroundColor: Colors.blueAccent),
+                      onPressed: () {
+                        rollDice();
+                      },
+                      child: const Text(
+                        'Roll',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      )),
                 ),
               )
             ],
