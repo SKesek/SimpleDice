@@ -32,8 +32,8 @@ class HomePage extends StatelessWidget {
               children: [
                 CustomButton(
                   icon: Image.asset(
-                    'images/dice_logo.png',
-                    scale: 10,
+                    'images/logo.png',
+                    scale: 13,
                   ),
                   title: 'Zwykłe kości',
                   screenName: const NormalDice(),
@@ -48,8 +48,8 @@ class HomePage extends StatelessWidget {
                 ),
                 CustomButton(
                   icon: Image.asset(
-                    'images/dice_logo.png',
-                    scale: 10,
+                    'images/logo.png',
+                    scale: 13,
                   ),
                   title: 'Kościany poker',
                   screenName: const NormalDice(),
