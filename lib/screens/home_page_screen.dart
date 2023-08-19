@@ -1,4 +1,4 @@
-import 'package:dice_pro/screens/manywall_numer_screen.dart';
+import 'package:dice_pro/screens/manywall_number_screen.dart';
 import 'package:dice_pro/screens/normal_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';

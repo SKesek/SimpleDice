@@ -41,35 +41,37 @@ class NormalDice extends StatelessWidget {
                         icon: Image.asset(
                           'images/empty.png',
                         ),
-                        screenName: const NormalDiceScreen(),
+                        screenName: const NormalDiceScreen(
+                          cNumber: 1,
+                        ),
                       ),
                       CustomButton(
                         title: '2 Kości',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
-                        screenName: const NormalDiceScreen(),
+                        screenName: const NormalDiceScreen(cNumber: 2),
                       ),
                       CustomButton(
                         title: '3 Kości',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
-                        screenName: const NormalDiceScreen(),
+                        screenName: const NormalDiceScreen(cNumber: 3),
                       ),
                       CustomButton(
                         title: '4 Kości',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
-                        screenName: const NormalDiceScreen(),
+                        screenName: const NormalDiceScreen(cNumber: 4),
                       ),
                       CustomButton(
                         title: '5 Kości',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
-                        screenName: const NormalDiceScreen(),
+                        screenName: const NormalDiceScreen(cNumber: 5),
                       ),
                     ],
                   ),
