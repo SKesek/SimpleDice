@@ -3,6 +3,7 @@ import 'package:dice_pro/const.dart';
 
 import '../styles/custon_button.dart';
 import 'normal_dice_screen.dart';
+import 'normal_one_dice_screen.dart';
 
 class NormalDice extends StatelessWidget {
   const NormalDice({super.key});
@@ -41,9 +42,7 @@ class NormalDice extends StatelessWidget {
                         icon: Image.asset(
                           'images/empty.png',
                         ),
-                        screenName: const NormalDiceScreen(
-                          cNumber: 1,
-                        ),
+                        screenName: const NormalOneDiceScreen(),
                       ),
                       CustomButton(
                         title: '2 Kości',

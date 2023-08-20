@@ -32,7 +32,7 @@ class _ManywallScreentState extends State<ManywallScreen> {
         decoration: kBackgroundColor(),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Stack(
                 alignment: Alignment.center,
@@ -46,7 +46,7 @@ class _ManywallScreentState extends State<ManywallScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                    top: 75, bottom: 50, right: 10, left: 10),
+                    top: 40, bottom: 50, right: 10, left: 10),
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(

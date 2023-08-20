@@ -38,37 +38,35 @@ class _NormalDiceScreenState extends State<NormalDiceScreen> {
         decoration: kBackgroundColor(),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Visibility(
-                        visible: checkNumber.dice12(widget.cNumber),
-                        child: Image.asset('images/$diceNumber1.png'),
-                      ),
-                      Visibility(
-                        visible: checkNumber.dice12(widget.cNumber),
-                        child: Image.asset('images/$diceNumber2.png'),
-                      ),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Visibility(
+                      visible: checkNumber.dice12(widget.cNumber),
+                      child: Expanded(
+                          child: Image.asset('images/$diceNumber1.png')),
+                    ),
+                    Visibility(
+                      visible: checkNumber.dice12(widget.cNumber),
+                      child: Expanded(
+                          child: Image.asset('images/$diceNumber2.png')),
+                    ),
+                  ],
                 ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset('images/$diceNumber3.png'),
-                      Image.asset('images/$diceNumber4.png'),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(child: Image.asset('images/$diceNumber3.png')),
+                    Expanded(child: Image.asset('images/$diceNumber4.png')),
+                  ],
                 ),
-                Expanded(
-                    child: Visibility(
-                        visible: checkNumber.dice5(widget.cNumber),
+                Visibility(
+                    visible: checkNumber.dice5(widget.cNumber),
+                    child: Expanded(
                         child: Image.asset('images/$diceNumber5.png'))),
                 Padding(
                   padding: const EdgeInsets.only(
