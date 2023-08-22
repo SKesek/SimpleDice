@@ -2,6 +2,7 @@ import 'package:dice_pro/screens/manywall_number_screen.dart';
 import 'package:dice_pro/screens/normal_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
+import 'dice_poker_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
                     scale: 14,
                   ),
                   title: 'Wielościenne kości',
-                  screenName: const ManywallNumerScreen(),
+                  screenName: const ManywallNumberScreen(),
                 ),
                 CustomButton(
                   icon: Image.asset(
@@ -52,7 +53,7 @@ class HomePage extends StatelessWidget {
                     scale: 13,
                   ),
                   title: 'Kościany poker',
-                  screenName: const NormalDice(),
+                  screenName: const DicePokerScreen(),
                 ),
               ],
             ),
