@@ -16,13 +16,30 @@ class _DicePokerState extends State<DicePokerScreen> {
   int diceNumber3 = Random().nextInt(6) + 1;
   int diceNumber4 = Random().nextInt(6) + 1;
   int diceNumber5 = Random().nextInt(6) + 1;
+
+  double opacity1 = 1;
+  double opacity2 = 1;
+  double opacity3 = 1;
+  double opacity4 = 1;
+  double opacity5 = 1;
+
   void rollDice() {
     setState(() {
-      diceNumber1 = Random().nextInt(6) + 1;
-      diceNumber2 = Random().nextInt(6) + 1;
-      diceNumber3 = Random().nextInt(6) + 1;
-      diceNumber4 = Random().nextInt(6) + 1;
-      diceNumber5 = Random().nextInt(6) + 1;
+      if (opacity1 == 1) {
+        diceNumber1 = Random().nextInt(6) + 1;
+      }
+      if (opacity2 == 1) {
+        diceNumber2 = Random().nextInt(6) + 1;
+      }
+      if (opacity3 == 1) {
+        diceNumber3 = Random().nextInt(6) + 1;
+      }
+      if (opacity4 == 1) {
+        diceNumber4 = Random().nextInt(6) + 1;
+      }
+      if (opacity5 == 1) {
+        diceNumber5 = Random().nextInt(6) + 1;
+      }
     });
   }
 
@@ -53,55 +70,95 @@ class _DicePokerState extends State<DicePokerScreen> {
               ),
               Expanded(
                 child: Opacity(
-                  opacity: 0.5,
-                  child: TextButton(
-                    child: Image.asset('images/$diceNumber1.png'),
+                  opacity: opacity1,
+                  child: IconButton(
+                    icon: Image.asset('images/$diceNumber1.png'),
                     onPressed: () {
-                      rollDice();
+                      if (opacity1 == 1) {
+                        setState(() {
+                          opacity1 = 0.5;
+                        });
+                      } else {
+                        setState(() {
+                          opacity1 = 1;
+                        });
+                      }
                     },
                   ),
                 ),
               ),
               Expanded(
                 child: Opacity(
-                  opacity: 0.5,
-                  child: TextButton(
-                    child: Image.asset('images/$diceNumber2.png'),
+                  opacity: opacity2,
+                  child: IconButton(
+                    icon: Image.asset('images/$diceNumber2.png'),
                     onPressed: () {
-                      rollDice();
+                      if (opacity2 == 1) {
+                        setState(() {
+                          opacity2 = 0.5;
+                        });
+                      } else {
+                        setState(() {
+                          opacity2 = 1;
+                        });
+                      }
                     },
                   ),
                 ),
               ),
               Expanded(
                 child: Opacity(
-                  opacity: 0.5,
-                  child: TextButton(
-                    child: Image.asset('images/$diceNumber3.png'),
+                  opacity: opacity3,
+                  child: IconButton(
+                    icon: Image.asset('images/$diceNumber3.png'),
                     onPressed: () {
-                      rollDice();
+                      if (opacity3 == 1) {
+                        setState(() {
+                          opacity3 = 0.5;
+                        });
+                      } else {
+                        setState(() {
+                          opacity3 = 1;
+                        });
+                      }
                     },
                   ),
                 ),
               ),
               Expanded(
                 child: Opacity(
-                  opacity: 0.5,
-                  child: TextButton(
-                    child: Image.asset('images/$diceNumber4.png'),
+                  opacity: opacity4,
+                  child: IconButton(
+                    icon: Image.asset('images/$diceNumber4.png'),
                     onPressed: () {
-                      rollDice();
+                      if (opacity4 == 1) {
+                        setState(() {
+                          opacity4 = 0.5;
+                        });
+                      } else {
+                        setState(() {
+                          opacity4 = 1;
+                        });
+                      }
                     },
                   ),
                 ),
               ),
               Expanded(
                 child: Opacity(
-                  opacity: 0.5,
-                  child: TextButton(
-                    child: Image.asset('images/$diceNumber5.png'),
+                  opacity: opacity5,
+                  child: IconButton(
+                    icon: Image.asset('images/$diceNumber5.png'),
                     onPressed: () {
-                      rollDice();
+                      if (opacity5 == 1) {
+                        setState(() {
+                          opacity5 = 0.5;
+                        });
+                      } else {
+                        setState(() {
+                          opacity5 = 1;
+                        });
+                      }
                     },
                   ),
                 ),
