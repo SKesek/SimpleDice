@@ -47,12 +47,19 @@ class _DicePokerState extends State<DicePokerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    // AlertDialog(
+    //   title: const Text('How to play?'),
+    //   content: const Text("This is how you play"),
+    //   actions: [TextButton(onPressed: () {}, child: const Text("Okey"))],
+    // );
     return SafeArea(
         child: Scaffold(
       body: SlidingUpPanel(
         controller: _panelController,
         minHeight: 0,
-        maxHeight: 500,
+        maxHeight: screenHeight * 4 / 6,
         borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)),
         panel: Center(
@@ -271,9 +278,6 @@ class RoleBlock extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const Icon(Icons.keyboard_arrow_right_outlined),
-          const SizedBox(
-            width: 20,
-          ),
           Flexible(
             child: RichText(
               text: TextSpan(
@@ -295,4 +299,22 @@ class RoleBlock extends StatelessWidget {
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('How to play?'),
+          content: const Text('This is how you play'),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Okey'))
+          ],
+        );
+      });
 }
