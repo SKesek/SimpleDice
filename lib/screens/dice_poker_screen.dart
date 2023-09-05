@@ -23,6 +23,8 @@ class _DicePokerState extends State<DicePokerScreen> {
   double opacity4 = 1;
   double opacity5 = 1;
 
+  int whichRound = 1;
+
   final PanelController _panelController = PanelController();
 
   void rollDice() {
@@ -46,14 +48,33 @@ class _DicePokerState extends State<DicePokerScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('How to play?'),
+            content: const Text('This is how you play'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-
-    // AlertDialog(
-    //   title: const Text('How to play?'),
-    //   content: const Text("This is how you play"),
-    //   actions: [TextButton(onPressed: () {}, child: const Text("Okey"))],
-    // );
     return SafeArea(
         child: Scaffold(
       body: SlidingUpPanel(
@@ -143,15 +164,7 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber1.png'),
                       onPressed: () {
-                        if (opacity1 == 1) {
-                          setState(() {
-                            opacity1 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity1 = 1;
-                          });
-                        }
+                        turnOpacity(opacity1);
                       },
                     ),
                   ),
@@ -162,15 +175,7 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber2.png'),
                       onPressed: () {
-                        if (opacity2 == 1) {
-                          setState(() {
-                            opacity2 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity2 = 1;
-                          });
-                        }
+                        turnOpacity(opacity2);
                       },
                     ),
                   ),
@@ -181,15 +186,7 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber3.png'),
                       onPressed: () {
-                        if (opacity3 == 1) {
-                          setState(() {
-                            opacity3 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity3 = 1;
-                          });
-                        }
+                        turnOpacity(opacity3);
                       },
                     ),
                   ),
@@ -200,15 +197,7 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber4.png'),
                       onPressed: () {
-                        if (opacity4 == 1) {
-                          setState(() {
-                            opacity4 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity4 = 1;
-                          });
-                        }
+                        turnOpacity(opacity4);
                       },
                     ),
                   ),
@@ -219,15 +208,7 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber5.png'),
                       onPressed: () {
-                        if (opacity5 == 1) {
-                          setState(() {
-                            opacity5 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity5 = 1;
-                          });
-                        }
+                        turnOpacity(opacity5);
                       },
                     ),
                   ),
@@ -242,6 +223,14 @@ class _DicePokerState extends State<DicePokerScreen> {
                             elevation: 8, backgroundColor: Colors.blueAccent),
                         onPressed: () {
                           rollDice();
+                          setState(() {
+                            whichRound = 2;
+                            opacity1 = 0.5;
+                            opacity2 = 0.5;
+                            opacity3 = 0.5;
+                            opacity4 = 0.5;
+                            opacity5 = 0.5;
+                          });
                         },
                         child: const Text(
                           'Roll',
@@ -258,6 +247,20 @@ class _DicePokerState extends State<DicePokerScreen> {
         ),
       ),
     ));
+  }
+
+  void turnOpacity(double opacityNumber) {
+    if (whichRound == 2) {
+      if (opacityNumber == 1) {
+        setState(() {
+          opacityNumber = 0.5;
+        });
+      } else {
+        setState(() {
+          opacityNumber = 1;
+        });
+      }
+    } else {}
   }
 }
 
@@ -299,22 +302,4 @@ class RoleBlock extends StatelessWidget {
       ),
     );
   }
-}
-
-showAlertDialog(BuildContext context) {
-  showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('How to play?'),
-          content: const Text('This is how you play'),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Okey'))
-          ],
-        );
-      });
 }
