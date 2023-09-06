@@ -3,6 +3,8 @@ import 'package:dice_pro/const.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
+import '../styles/role_block.dart';
+
 class DicePokerScreen extends StatefulWidget {
   const DicePokerScreen({super.key});
 
@@ -24,6 +26,7 @@ class _DicePokerState extends State<DicePokerScreen> {
   double opacity5 = 1;
 
   int whichRound = 1;
+  List rankingList = [];
 
   final PanelController _panelController = PanelController();
 
@@ -70,6 +73,18 @@ class _DicePokerState extends State<DicePokerScreen> {
         },
       );
     });
+  }
+
+  String showRanging() {
+    return 'nothing';
+  }
+
+  double showResult() {
+    if (whichRound == 3) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
 
   @override
@@ -144,8 +159,18 @@ class _DicePokerState extends State<DicePokerScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    const SizedBox(
+                      width: 60,
+                    ),
+                    Opacity(
+                      opacity: showResult(),
+                      child: const Text(
+                        'You have Five High Straight',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ),
                     IconButton(
                       icon: const Icon(
                         Icons.info,
@@ -164,7 +189,15 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber1.png'),
                       onPressed: () {
-                        turnOpacity(opacity1);
+                        if (opacity1 == 1) {
+                          setState(() {
+                            opacity1 = 0.5;
+                          });
+                        } else {
+                          setState(() {
+                            opacity1 = 1;
+                          });
+                        }
                       },
                     ),
                   ),
@@ -175,7 +208,15 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber2.png'),
                       onPressed: () {
-                        turnOpacity(opacity2);
+                        if (opacity2 == 1) {
+                          setState(() {
+                            opacity2 = 0.5;
+                          });
+                        } else {
+                          setState(() {
+                            opacity2 = 1;
+                          });
+                        }
                       },
                     ),
                   ),
@@ -186,7 +227,15 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber3.png'),
                       onPressed: () {
-                        turnOpacity(opacity3);
+                        if (opacity3 == 1) {
+                          setState(() {
+                            opacity3 = 0.5;
+                          });
+                        } else {
+                          setState(() {
+                            opacity3 = 1;
+                          });
+                        }
                       },
                     ),
                   ),
@@ -197,7 +246,15 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber4.png'),
                       onPressed: () {
-                        turnOpacity(opacity4);
+                        if (opacity4 == 1) {
+                          setState(() {
+                            opacity4 = 0.5;
+                          });
+                        } else {
+                          setState(() {
+                            opacity4 = 1;
+                          });
+                        }
                       },
                     ),
                   ),
@@ -208,7 +265,15 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber5.png'),
                       onPressed: () {
-                        turnOpacity(opacity5);
+                        if (opacity5 == 1) {
+                          setState(() {
+                            opacity5 = 0.5;
+                          });
+                        } else {
+                          setState(() {
+                            opacity5 = 1;
+                          });
+                        }
                       },
                     ),
                   ),
@@ -219,26 +284,38 @@ class _DicePokerState extends State<DicePokerScreen> {
                   child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            elevation: 8, backgroundColor: Colors.blueAccent),
-                        onPressed: () {
-                          rollDice();
-                          setState(() {
-                            whichRound = 2;
-                            opacity1 = 0.5;
-                            opacity2 = 0.5;
-                            opacity3 = 0.5;
-                            opacity4 = 0.5;
-                            opacity5 = 0.5;
-                          });
-                        },
-                        child: const Text(
-                          'Roll',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
-                        )),
+                      style: ElevatedButton.styleFrom(
+                          elevation: 8, backgroundColor: Colors.blueAccent),
+                      onPressed: () {
+                        rollDice();
+                        setState(() {
+                          whichRound++;
+                          opacity1 = 0.5;
+                          opacity2 = 0.5;
+                          opacity3 = 0.5;
+                          opacity4 = 0.5;
+                          opacity5 = 0.5;
+                        });
+                        rankingList.clear();
+                        rankingList.addAll([
+                          diceNumber1,
+                          diceNumber2,
+                          diceNumber3,
+                          diceNumber4,
+                          diceNumber5
+                        ]);
+                        rankingList.sort();
+                        // ignore: avoid_print
+                        print(rankingList);
+                      },
+                      child: const Text(
+                        'Roll',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -247,59 +324,5 @@ class _DicePokerState extends State<DicePokerScreen> {
         ),
       ),
     ));
-  }
-
-  void turnOpacity(double opacityNumber) {
-    if (whichRound == 2) {
-      if (opacityNumber == 1) {
-        setState(() {
-          opacityNumber = 0.5;
-        });
-      } else {
-        setState(() {
-          opacityNumber = 1;
-        });
-      }
-    } else {}
-  }
-}
-
-class RoleBlock extends StatelessWidget {
-  const RoleBlock({
-    super.key,
-    required this.boldText,
-    required this.normalText,
-  });
-  final String boldText;
-  final String normalText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const Icon(Icons.keyboard_arrow_right_outlined),
-          Flexible(
-            child: RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                      text: boldText,
-                      style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)),
-                  TextSpan(
-                      text: normalText,
-                      style: const TextStyle(fontSize: 14, color: Colors.black))
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }
