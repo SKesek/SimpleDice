@@ -60,7 +60,8 @@ class _DicePokerState extends State<DicePokerScreen> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text('How to play?'),
-            content: const Text('This is how you play'),
+            content: const Text(
+                'The game consists of two rounds. The first round consists of throwing 5 dice. In the second round, you have to choose which dice you want to throw again. '),
             actions: <Widget>[
               TextButton(
                 onPressed: () {
@@ -75,7 +76,63 @@ class _DicePokerState extends State<DicePokerScreen> {
     });
   }
 
-  String showRanging() {
+  String rollNextButtonText() {
+    if (whichRound == 3) {
+      return 'Next game';
+    } else {
+      return 'Roll';
+    }
+  }
+
+  String showRanking() {
+    int numParis = 0;
+    bool triple = false;
+
+    if (rankingList.isEmpty) {
+    } else {
+      //Five of Kind check
+      bool five = true;
+      int checkVal = rankingList[0];
+      for (int i = 1; i < rankingList.length; i++) {
+        if (rankingList[i] != checkVal) {
+          five = false;
+        }
+      }
+      if (five == true) {
+        return 'Five-of-a-Kind';
+      }
+      //Four of Kind check
+      int count = 0;
+      for (var i in rankingList) {
+        for (var j in rankingList) {
+          if (i == j) {
+            count++;
+          }
+        }
+        if (count == 4) {
+          return 'Four-of-a-Kind';
+        }
+        if (count == 3) {
+          triple = true;
+        }
+        if (count == 2) {
+          numParis++;
+        }
+        count = 0;
+      }
+      if (triple == true && numParis == 2) {
+        return 'Full House';
+      }
+      if (triple == true) {
+        return 'Three-of-a-Kind';
+      }
+      if (numParis == 4) {
+        return 'Two Pairs';
+      }
+      if (numParis == 2) {
+        return 'Pair';
+      }
+    }
     return 'nothing';
   }
 
@@ -166,9 +223,10 @@ class _DicePokerState extends State<DicePokerScreen> {
                     ),
                     Opacity(
                       opacity: showResult(),
-                      child: const Text(
-                        'You have Five High Straight',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      child: Text(
+                        'You have ${showRanking()}',
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                     IconButton(
@@ -189,14 +247,16 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber1.png'),
                       onPressed: () {
-                        if (opacity1 == 1) {
-                          setState(() {
-                            opacity1 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity1 = 1;
-                          });
+                        if (whichRound == 2) {
+                          if (opacity1 == 1) {
+                            setState(() {
+                              opacity1 = 0.5;
+                            });
+                          } else {
+                            setState(() {
+                              opacity1 = 1;
+                            });
+                          }
                         }
                       },
                     ),
@@ -208,14 +268,16 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber2.png'),
                       onPressed: () {
-                        if (opacity2 == 1) {
-                          setState(() {
-                            opacity2 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity2 = 1;
-                          });
+                        if (whichRound == 2) {
+                          if (opacity2 == 1) {
+                            setState(() {
+                              opacity2 = 0.5;
+                            });
+                          } else {
+                            setState(() {
+                              opacity2 = 1;
+                            });
+                          }
                         }
                       },
                     ),
@@ -227,14 +289,16 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber3.png'),
                       onPressed: () {
-                        if (opacity3 == 1) {
-                          setState(() {
-                            opacity3 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity3 = 1;
-                          });
+                        if (whichRound == 2) {
+                          if (opacity3 == 1) {
+                            setState(() {
+                              opacity3 = 0.5;
+                            });
+                          } else {
+                            setState(() {
+                              opacity3 = 1;
+                            });
+                          }
                         }
                       },
                     ),
@@ -246,14 +310,16 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber4.png'),
                       onPressed: () {
-                        if (opacity4 == 1) {
-                          setState(() {
-                            opacity4 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity4 = 1;
-                          });
+                        if (whichRound == 2) {
+                          if (opacity4 == 1) {
+                            setState(() {
+                              opacity4 = 0.5;
+                            });
+                          } else {
+                            setState(() {
+                              opacity4 = 1;
+                            });
+                          }
                         }
                       },
                     ),
@@ -265,14 +331,16 @@ class _DicePokerState extends State<DicePokerScreen> {
                     child: IconButton(
                       icon: Image.asset('images/$diceNumber5.png'),
                       onPressed: () {
-                        if (opacity5 == 1) {
-                          setState(() {
-                            opacity5 = 0.5;
-                          });
-                        } else {
-                          setState(() {
-                            opacity5 = 1;
-                          });
+                        if (whichRound == 2) {
+                          if (opacity5 == 1) {
+                            setState(() {
+                              opacity5 = 0.5;
+                            });
+                          } else {
+                            setState(() {
+                              opacity5 = 1;
+                            });
+                          }
                         }
                       },
                     ),
@@ -288,29 +356,59 @@ class _DicePokerState extends State<DicePokerScreen> {
                           elevation: 8, backgroundColor: Colors.blueAccent),
                       onPressed: () {
                         rollDice();
-                        setState(() {
-                          whichRound++;
-                          opacity1 = 0.5;
-                          opacity2 = 0.5;
-                          opacity3 = 0.5;
-                          opacity4 = 0.5;
-                          opacity5 = 0.5;
-                        });
-                        rankingList.clear();
-                        rankingList.addAll([
-                          diceNumber1,
-                          diceNumber2,
-                          diceNumber3,
-                          diceNumber4,
-                          diceNumber5
-                        ]);
-                        rankingList.sort();
-                        // ignore: avoid_print
-                        print(rankingList);
+                        switch (whichRound) {
+                          case 1: //first round
+                            rollDice();
+                            setState(() {
+                              whichRound++;
+                              opacity1 = 0.5;
+                              opacity2 = 0.5;
+                              opacity3 = 0.5;
+                              opacity4 = 0.5;
+                              opacity5 = 0.5;
+                              rankingList.clear();
+                              rankingList.addAll([
+                                diceNumber1,
+                                diceNumber2,
+                                diceNumber3,
+                                diceNumber4,
+                                diceNumber5
+                              ]);
+                              rankingList.sort();
+                            });
+                            break;
+                          case 2: //second round
+                            rollDice();
+                            setState(() {
+                              whichRound++;
+                              opacity1 = 1;
+                              opacity2 = 1;
+                              opacity3 = 1;
+                              opacity4 = 1;
+                              opacity5 = 1;
+                              rankingList.clear();
+                              rankingList.addAll([
+                                diceNumber1,
+                                diceNumber2,
+                                diceNumber3,
+                                diceNumber4,
+                                diceNumber5
+                              ]);
+                              rankingList.sort();
+                            });
+                            break;
+
+                          case 3:
+                            rollDice();
+                            setState(() {
+                              whichRound = 1;
+                            });
+                            break;
+                        }
                       },
-                      child: const Text(
-                        'Roll',
-                        style: TextStyle(
+                      child: Text(
+                        rollNextButtonText(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                         ),

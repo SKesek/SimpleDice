@@ -42,7 +42,8 @@ class _ManywallNumberScreenState extends State<ManywallNumberScreen> {
                 children: [
                   Column(children: [
                     const Text(
-                      'Ile ścianek ma być na kostce?',
+                      'How many walls should there be on the dice?',
+                      textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 25, color: Colors.white),
                     ),
                     ElevatedButton(
@@ -61,7 +62,7 @@ class _ManywallNumberScreenState extends State<ManywallNumberScreen> {
                   ),
                   Column(children: [
                     CustomButton(
-                      title: 'Dalej',
+                      title: 'Next',
                       screenName: ManywallScreen(
                         numberWall: numberWall,
                       ),

@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
                     'images/logo.png',
                     scale: 13,
                   ),
-                  title: 'Zwykłe kości',
+                  title: 'Normal dice',
                   screenName: const NormalDice(),
                 ),
                 CustomButton(
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                     'images/dice_roll_logo.png',
                     scale: 14,
                   ),
-                  title: 'Wielościenne kości',
+                  title: 'Manywall dice',
                   screenName: const ManywallNumberScreen(),
                 ),
                 CustomButton(
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                     'images/logo.png',
                     scale: 13,
                   ),
-                  title: 'Kościany poker',
+                  title: 'Dice poker',
                   screenName: const DicePokerScreen(),
                 ),
               ],

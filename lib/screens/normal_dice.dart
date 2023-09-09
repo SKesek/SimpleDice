@@ -27,7 +27,7 @@ class NormalDice extends StatelessWidget {
                         scale: 5,
                       ),
                       const Text(
-                        'Zwykłe kości',
+                        'Normal dice',
                         style: TextStyle(fontSize: 45, color: Colors.white),
                       ),
                     ],
@@ -38,35 +38,35 @@ class NormalDice extends StatelessWidget {
                   child: Column(
                     children: [
                       CustomButton(
-                        title: '1 Kość',
+                        title: '1 die',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
                         screenName: const NormalOneDiceScreen(),
                       ),
                       CustomButton(
-                        title: '2 Kości',
+                        title: '2 dice',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
                         screenName: const NormalDiceScreen(cNumber: 2),
                       ),
                       CustomButton(
-                        title: '3 Kości',
+                        title: '3 dice',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
                         screenName: const NormalDiceScreen(cNumber: 3),
                       ),
                       CustomButton(
-                        title: '4 Kości',
+                        title: '4 dice',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
                         screenName: const NormalDiceScreen(cNumber: 4),
                       ),
                       CustomButton(
-                        title: '5 Kości',
+                        title: '5 dice',
                         icon: Image.asset(
                           'images/empty.png',
                         ),
