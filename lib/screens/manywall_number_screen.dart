@@ -2,6 +2,7 @@ import 'package:dice_pro/const.dart';
 import 'package:dice_pro/screens/manywall_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ManywallNumberScreen extends StatefulWidget {
   const ManywallNumberScreen({super.key});
@@ -41,10 +42,13 @@ class _ManywallNumberScreenState extends State<ManywallNumberScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(children: [
-                    const Text(
+                    Text(
                       'How many walls should there be on the dice?',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25, color: Colors.white),
+                      style: GoogleFonts.lobster(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 30),
+                      ),
                     ),
                     ElevatedButton(
                         onPressed: incrementNumber,

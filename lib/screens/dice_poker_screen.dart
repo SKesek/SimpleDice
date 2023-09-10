@@ -61,7 +61,7 @@ class _DicePokerState extends State<DicePokerScreen> {
           return AlertDialog(
             title: const Text('How to play?'),
             content: const Text(
-                'The game consists of two rounds. The first round consists of throwing 5 dice. In the second round, you have to choose which dice you want to throw again. '),
+                'The game consists of two rounds. The first round consists of throwing 5 dice. In the second round, you have to choose which dice you want to throw again. The player with the highest-ranking hand wins'),
             actions: <Widget>[
               TextButton(
                 onPressed: () {
@@ -131,6 +131,22 @@ class _DicePokerState extends State<DicePokerScreen> {
       }
       if (numParis == 2) {
         return 'Pair';
+      }
+
+      //Six or five High Straight check
+      if (rankingList[0] == 1 &&
+          rankingList[1] == 2 &&
+          rankingList[2] == 3 &&
+          rankingList[3] == 4 &&
+          rankingList[4] == 5) {
+        return 'Five High Straigth';
+      }
+      if (rankingList[0] == 2 &&
+          rankingList[1] == 3 &&
+          rankingList[2] == 4 &&
+          rankingList[3] == 5 &&
+          rankingList[4] == 6) {
+        return 'Six High Straigth';
       }
     }
     return 'nothing';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -21,10 +22,10 @@ class CustomButton extends StatelessWidget {
         label: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              title,
-              style: const TextStyle(color: Colors.white, fontSize: 20),
-            ),
+            Text(title,
+                style: GoogleFonts.lobster(
+                  textStyle: const TextStyle(color: Colors.white, fontSize: 25),
+                )),
           ],
         ),
         onPressed: () {

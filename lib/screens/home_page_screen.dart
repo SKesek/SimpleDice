@@ -2,6 +2,7 @@ import 'package:dice_pro/screens/manywall_number_screen.dart';
 import 'package:dice_pro/screens/normal_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'dice_poker_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,10 +21,10 @@ class HomePage extends StatelessWidget {
                   'images/logo.png',
                   scale: 6,
                 ),
-                const Text(
-                  'Simple Dice',
-                  style: TextStyle(fontSize: 45, color: Colors.white),
-                ),
+                Text('Simple Dice',
+                    style: GoogleFonts.lobster(
+                        textStyle: const TextStyle(
+                            fontSize: 50, color: Colors.white))),
               ],
             ),
           ),
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
                 ),
                 CustomButton(
                   icon: Image.asset(
-                    'images/logo.png',
+                    'images/poker_dice_logo.png',
                     scale: 13,
                   ),
                   title: 'Dice poker',

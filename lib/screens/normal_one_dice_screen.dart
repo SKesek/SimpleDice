@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:dice_pro/const.dart';
 import 'dart:math';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class NormalOneDiceScreen extends StatefulWidget {
   const NormalOneDiceScreen({super.key});
 
@@ -42,13 +44,11 @@ class _NormalOneDiceScreenState extends State<NormalOneDiceScreen> {
                         onPressed: () {
                           rollDice();
                         },
-                        child: const Text(
-                          'Roll',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
-                        )),
+                        child: Text('Roll',
+                            style: GoogleFonts.lobster(
+                              textStyle: const TextStyle(
+                                  color: Colors.white, fontSize: 25),
+                            ))),
                   ),
                 ),
               ],
