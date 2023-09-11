@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:dice_pro/const.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../styles/role_block.dart';
@@ -59,15 +60,30 @@ class _DicePokerState extends State<DicePokerScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text('How to play?'),
-            content: const Text(
-                'The game consists of two rounds. The first round consists of throwing 5 dice. In the second round, you have to choose which dice you want to throw again. The player with the highest-ranking hand wins'),
+            title: Text(
+              'How to play?',
+              style: GoogleFonts.lobster(
+                textStyle: const TextStyle(color: Colors.black, fontSize: 25),
+              ),
+            ),
+            content: Text(
+              'The game consists of two rounds. The first round consists of throwing 5 dice. In the second round, you have to choose which dice you want to throw again. The player with the highest-ranking hand wins.',
+              style: GoogleFonts.lobster(
+                textStyle: const TextStyle(color: Colors.black, fontSize: 20),
+              ),
+            ),
             actions: <Widget>[
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: const Text('OK'),
+                child: Text(
+                  'OK',
+                  style: GoogleFonts.lobster(
+                    textStyle:
+                        const TextStyle(color: Colors.black, fontSize: 20),
+                  ),
+                ),
               ),
             ],
           );
@@ -180,9 +196,13 @@ class _DicePokerState extends State<DicePokerScreen> {
                   const SizedBox(
                     width: 70,
                   ),
-                  const Text(
+                  Text(
                     'Rules',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.lobster(
+                        textStyle: const TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black)),
                   ),
                   TextButton(
                     onPressed: () {
@@ -241,8 +261,9 @@ class _DicePokerState extends State<DicePokerScreen> {
                       opacity: showResult(),
                       child: Text(
                         'You have ${showRanking()}',
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 20),
+                        style: GoogleFonts.lobster(
+                            textStyle: const TextStyle(
+                                fontSize: 25, color: Colors.white)),
                       ),
                     ),
                     IconButton(
@@ -422,13 +443,10 @@ class _DicePokerState extends State<DicePokerScreen> {
                             break;
                         }
                       },
-                      child: Text(
-                        rollNextButtonText(),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
+                      child: Text(rollNextButtonText(),
+                          style: GoogleFonts.lobster(
+                              textStyle: const TextStyle(
+                                  fontSize: 25, color: Colors.white))),
                     ),
                   ),
                 ),

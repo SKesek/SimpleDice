@@ -18,8 +18,8 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'images/logo.png',
-                  scale: 6,
+                  'images/dice_logo2.png',
+                  scale: 5,
                 ),
                 Text('Simple Dice',
                     style: GoogleFonts.lobster(
