@@ -59,6 +59,15 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+          Opacity(
+            opacity: 0.5,
+            child: Text(
+              'by KristofDev',
+              style: GoogleFonts.lobster(
+                textStyle: const TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          )
         ],
       ),
     );
