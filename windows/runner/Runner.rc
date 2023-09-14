@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "dice_pro" "\0"
+            VALUE "FileDescription", "Simple Dice" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "dice_pro" "\0"
+            VALUE "InternalName", "Simple Dice" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "dice_pro.exe" "\0"
-            VALUE "ProductName", "dice_pro" "\0"
+            VALUE "ProductName", "Simple Dice" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

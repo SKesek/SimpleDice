@@ -1,4 +1,4 @@
-import 'package:dice_pro/screens/manywall_number_screen.dart';
+import 'package:dice_pro/screens/multiwall_number_screen.dart';
 import 'package:dice_pro/screens/normal_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
@@ -45,8 +45,8 @@ class HomePage extends StatelessWidget {
                     'images/dice_roll_logo.png',
                     scale: 14,
                   ),
-                  title: 'Manywall dice',
-                  screenName: const ManywallNumberScreen(),
+                  title: 'Multiwall dice',
+                  screenName: const MultiwallNumberScreen(),
                 ),
                 CustomButton(
                   icon: Image.asset(

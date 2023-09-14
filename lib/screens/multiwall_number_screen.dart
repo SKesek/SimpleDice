@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ManywallNumberScreen extends StatefulWidget {
-  const ManywallNumberScreen({super.key});
+class MultiwallNumberScreen extends StatefulWidget {
+  const MultiwallNumberScreen({super.key});
 
   @override
-  State<ManywallNumberScreen> createState() => _ManywallNumberScreenState();
+  State<MultiwallNumberScreen> createState() => _MultiwallNumberScreenState();
 }
 
-class _ManywallNumberScreenState extends State<ManywallNumberScreen> {
+class _MultiwallNumberScreenState extends State<MultiwallNumberScreen> {
   int numberWall = 7;
   void incrementNumber() {
     setState(() {
