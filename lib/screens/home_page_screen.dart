@@ -2,7 +2,6 @@ import 'package:dice_pro/screens/multiwall_number_screen.dart';
 import 'package:dice_pro/screens/normal_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_pro/styles/custon_button.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'dice_poker_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -22,9 +21,10 @@ class HomePage extends StatelessWidget {
                   scale: 5,
                 ),
                 Text('Simple Dice',
-                    style: GoogleFonts.lobster(
-                        textStyle: const TextStyle(
-                            fontSize: 50, color: Colors.white))),
+                    style: const TextStyle(
+                        fontFamily: 'Lobster',
+                        fontSize: 50,
+                        color: Colors.white)),
               ],
             ),
           ),
@@ -63,9 +63,8 @@ class HomePage extends StatelessWidget {
             opacity: 0.5,
             child: Text(
               'by KristofDev',
-              style: GoogleFonts.lobster(
-                textStyle: const TextStyle(color: Colors.white, fontSize: 20),
-              ),
+              style: const TextStyle(
+                  color: Colors.white, fontSize: 20, fontFamily: 'Lobster'),
             ),
           )
         ],

@@ -2,8 +2,6 @@ import 'package:dice_pro/const.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:google_fonts/google_fonts.dart';
-
 class ManywallScreen extends StatefulWidget {
   const ManywallScreen({super.key, required this.numberWall});
 
@@ -57,11 +55,13 @@ class _ManywallScreentState extends State<ManywallScreen> {
                       onPressed: () {
                         rollDice();
                       },
-                      child: Text('Roll',
-                          style: GoogleFonts.lobster(
-                            textStyle: const TextStyle(
-                                color: Colors.white, fontSize: 20),
-                          ))),
+                      child: Text(
+                        'Roll',
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'Lobster'),
+                      )),
                 ),
               )
             ],

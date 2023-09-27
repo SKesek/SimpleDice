@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:dice_pro/const.dart';
 import 'dart:math';
 import 'package:dice_pro/logic.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NormalDiceScreen extends StatefulWidget {
   const NormalDiceScreen({super.key, required this.cNumber});
@@ -30,6 +29,27 @@ class _NormalDiceScreenState extends State<NormalDiceScreen> {
     });
   }
 
+  int sum() {
+    int total = 0;
+    switch (widget.cNumber) {
+      case 2:
+        total = diceNumber3 + diceNumber4;
+        break;
+      case 3:
+        total = diceNumber3 + diceNumber4 + diceNumber5;
+        break;
+      case 4:
+        total = diceNumber1 + diceNumber2 + diceNumber3 + diceNumber4;
+        break;
+      case 5:
+        total =
+            diceNumber1 + diceNumber2 + diceNumber3 + diceNumber4 + diceNumber5;
+
+        break;
+    }
+    return total;
+  }
+
   @override
   Widget build(BuildContext context) {
     CheckNumber checkNumber = CheckNumber(widget.cNumber);
@@ -43,6 +63,11 @@ class _NormalDiceScreenState extends State<NormalDiceScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  'Total: ${sum()} ',
+                  style: TextStyle(
+                      color: Colors.white, fontFamily: 'Lobster', fontSize: 30),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -82,10 +107,10 @@ class _NormalDiceScreenState extends State<NormalDiceScreen> {
                         },
                         child: Text(
                           'Roll',
-                          style: GoogleFonts.lobster(
-                            textStyle: const TextStyle(
-                                color: Colors.white, fontSize: 25),
-                          ),
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Lobster'),
                         )),
                   ),
                 ),

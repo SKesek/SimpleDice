@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dice_pro/const.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../styles/custon_button.dart';
 import 'normal_dice_screen.dart';
@@ -29,9 +28,10 @@ class NormalDice extends StatelessWidget {
                       ),
                       Text(
                         'Normal dice',
-                        style: GoogleFonts.lobster(
-                            textStyle: const TextStyle(
-                                fontSize: 45, color: Colors.white)),
+                        style: const TextStyle(
+                            fontSize: 45,
+                            color: Colors.white,
+                            fontFamily: 'Lobster'),
                       ),
                     ],
                   ),

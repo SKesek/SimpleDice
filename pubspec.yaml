@@ -1,7 +1,7 @@
 name: dice_pro
 description: A simple dice application. You can use normal dice, multi-walled dice or play dice poker.
 
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: '>=2.19.5 <3.0.0'
@@ -12,7 +12,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   sliding_up_panel: ^2.0.0+1
-  google_fonts: ^4.0.4
+
 
 dev_dependencies:
   flutter_test:
@@ -29,8 +29,12 @@ flutter_launcher_icons:
   flutter_lints: ^2.0.0
 
 flutter:
-
+  fonts:
+    - family: Lobster
+      fonts:
+        - asset: assets/Lobster-Regular.ttf
   uses-material-design: true
 
   assets:
     - images/
+    - assets/

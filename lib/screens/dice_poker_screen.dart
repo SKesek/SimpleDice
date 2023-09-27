@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:dice_pro/const.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../styles/role_block.dart';
@@ -62,15 +61,13 @@ class _DicePokerState extends State<DicePokerScreen> {
           return AlertDialog(
             title: Text(
               'How to play?',
-              style: GoogleFonts.lobster(
-                textStyle: const TextStyle(color: Colors.black, fontSize: 25),
-              ),
+              style: const TextStyle(
+                  color: Colors.black, fontSize: 25, fontFamily: 'Lobster'),
             ),
             content: Text(
               'The game consists of two rounds. The first round consists of throwing 5 dice. In the second round, you have to choose which dice you want to throw again. The player with the highest-ranking hand wins.',
-              style: GoogleFonts.lobster(
-                textStyle: const TextStyle(color: Colors.black, fontSize: 20),
-              ),
+              style: const TextStyle(
+                  color: Colors.black, fontSize: 20, fontFamily: 'Lobster'),
             ),
             actions: <Widget>[
               TextButton(
@@ -79,10 +76,8 @@ class _DicePokerState extends State<DicePokerScreen> {
                 },
                 child: Text(
                   'OK',
-                  style: GoogleFonts.lobster(
-                    textStyle:
-                        const TextStyle(color: Colors.black, fontSize: 20),
-                  ),
+                  style: const TextStyle(
+                      color: Colors.black, fontSize: 20, fontFamily: 'Lobster'),
                 ),
               ),
             ],
@@ -196,14 +191,12 @@ class _DicePokerState extends State<DicePokerScreen> {
                   const SizedBox(
                     width: 70,
                   ),
-                  Text(
-                    'Rules',
-                    style: GoogleFonts.lobster(
-                        textStyle: const TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black)),
-                  ),
+                  Text('Rules',
+                      style: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontFamily: 'Lobster')),
                   TextButton(
                     onPressed: () {
                       _panelController.close();
@@ -259,12 +252,11 @@ class _DicePokerState extends State<DicePokerScreen> {
                     ),
                     Opacity(
                       opacity: showResult(),
-                      child: Text(
-                        'You have ${showRanking()}',
-                        style: GoogleFonts.lobster(
-                            textStyle: const TextStyle(
-                                fontSize: 25, color: Colors.white)),
-                      ),
+                      child: Text('You have ${showRanking()}',
+                          style: const TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontFamily: 'Lobster')),
                     ),
                     IconButton(
                       icon: const Icon(
@@ -444,9 +436,10 @@ class _DicePokerState extends State<DicePokerScreen> {
                         }
                       },
                       child: Text(rollNextButtonText(),
-                          style: GoogleFonts.lobster(
-                              textStyle: const TextStyle(
-                                  fontSize: 25, color: Colors.white))),
+                          style: const TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontFamily: 'Lobster')),
                     ),
                   ),
                 ),
