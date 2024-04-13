@@ -1,6 +1,6 @@
 # SimpleDice
  Aplikacja z koścmi
  
- Aplikacja jest w trakcie tworzenia.
- 
- Aplikacja będzie pozwalała na wybór rodzaju kości (sześcienna, wielościenna) oraz możliwość zagrania w kościanego pokera.
+Aplikacja dzięki której można rzucać kośćmi 
+Są kości zwykłe i wielościenne
+Można również zagrać w kościanego pokera
